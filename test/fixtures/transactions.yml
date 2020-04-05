@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_kind: debit
+  amount: 1
+  user_id: 1
+  account_id: 1
+
+two:
+  transaction_kind: credit
+  amount: 9.99
+  user_id: 1
+  account_id: 1

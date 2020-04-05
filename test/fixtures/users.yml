@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   email: fazilqureshi@live.com
   password_digest: $2a$12$R9K7P0LIaY33cpk4oAzMJOUuDTAuiiI65jW1xjhoWJV8x8LZoVYm.
 
 two:
+  id: 2
   email: test2@email.com
   password_digest: $2a$12$R9K7P0LIaY33cpk4oAzMJOUuDTAuiiI65jW1xjhoWJV8x8LZoVYm.
