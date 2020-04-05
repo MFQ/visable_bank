@@ -11,7 +11,7 @@ class Api::V1::AccountsController < ApplicationController
 
   # GET /accounts/1
   def show
-    render json: @account
+    render json: AccountSerializer.new(@account).serializable_hash
   end
 
   # POST /accounts
@@ -19,7 +19,7 @@ class Api::V1::AccountsController < ApplicationController
     @account = current_user.accounts.new(account_params)
 
     if @account.save
-      render json: @account, status: :created
+      render json: AccountSerializer.new(@account).serializable_hash, status: :created
     else
       render json: @account.errors, status: :unprocessable_entity
     end

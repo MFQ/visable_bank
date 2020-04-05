@@ -6,12 +6,12 @@ class Api::V1::TransactionsController < ApplicationController
   # GET /transactions
   def index
     @transactions = @account.transactions
-    render json: @transactions
+    render json: TransactionSerializer.new(@transactions).serializable_hash
   end
 
   # GET /transactions/1
   def show
-    render json: @transaction
+    render json: TransactionSerializer.new(@transaction).serializable_hash
   end
 
   # POST /transactions
@@ -20,7 +20,7 @@ class Api::V1::TransactionsController < ApplicationController
     @transaction.user_id = @account.user_id
     @transaction.do_transaction
     if @transaction.save
-      render json: @transaction, status: :created
+      render json: TransactionSerializer.new(@transaction).serializable_hash, status: :created
     else
       render json: @transaction.errors, status: :unprocessable_entity
     end
